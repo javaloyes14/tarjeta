@@ -1,1 +1,313 @@
-body{font-family:Arial,sans-serif;background:#eef3ee;display:flex;justify-content:center;padding:30px}.card{background:#fff;max-width:420px;width:100%;border-radius:20px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:center}.logo{max-width:220px}.btn{display:block;margin:12px 0;padding:15px;border-radius:12px;text-decoration:none;background:#f2f2f2;color:#222;font-weight:bold}.green{background:#008000;color:#fff}h2{color:#008000;font-size:1.1em}
+/* ===========================
+   JERONIMO JAVALOYES S.L.
+   Tarjeta Digital
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --verde:#0E8A4B;
+    --verde2:#22B56A;
+    --blanco:#ffffff;
+    --gris:#f4f6f8;
+    --texto:#2d3436;
+    --sombra:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+body{
+
+    background:var(--gris);
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    color:var(--texto);
+
+}
+
+/* ===========================
+      CABECERA
+=========================== */
+
+.hero{
+
+    position:relative;
+
+    height:330px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--verde),
+    var(--verde2));
+
+    overflow:hidden;
+
+}
+
+.hero-wave{
+
+    position:absolute;
+
+    bottom:-90px;
+
+    left:-5%;
+
+    width:110%;
+
+    height:180px;
+
+    background:white;
+
+    border-radius:50%;
+
+}
+
+/* ===========================
+      LOGO
+=========================== */
+
+.profile{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    padding-top:45px;
+
+}
+
+.logo{
+
+    width:140px;
+
+    height:140px;
+
+    background:white;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:var(--sombra);
+
+}
+
+.logo img{
+
+    width:95px;
+
+}
+
+/* ===========================
+      TITULOS
+=========================== */
+
+h1{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.empresa{
+
+    color:white;
+
+    opacity:.95;
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}
+
+.divider{
+
+    width:70px;
+
+    height:4px;
+
+    background:white;
+
+    margin:18px auto;
+
+    border-radius:50px;
+
+}
+
+/* ===========================
+      CONTENIDO
+=========================== */
+
+main{
+
+    width:92%;
+
+    max-width:600px;
+
+    margin:auto;
+
+    margin-top:-45px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+/* ===========================
+      TARJETAS
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    margin-bottom:25px;
+
+    box-shadow:var(--sombra);
+
+    animation:fadeUp .7s;
+
+}
+
+.card h2{
+
+    color:var(--verde);
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+}
+
+/* ===========================
+      BOTONES
+=========================== */
+
+.button{
+
+    display:block;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    padding:16px;
+
+    margin-top:15px;
+
+    border-radius:14px;
+
+    background:#ECEFF1;
+
+    color:#222;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    background:#dfe6e9;
+
+}
+
+.primary{
+
+    background:var(--verde);
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    background:#08753d;
+
+}
+
+/* ===========================
+      TEXTO
+=========================== */
+
+.card p{
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+      FOOTER
+=========================== */
+
+footer{
+
+    margin-top:35px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+      ANIMACION
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0px);
+
+}
+
+}
