@@ -1,7 +1,25 @@
-/* ===========================
-   JERONIMO JAVALOYES S.L.
-   Tarjeta Digital
-=========================== */
+/* ==========================================
+   JERÓNIMO JAVALOYES S.L.
+   TARJETA DIGITAL
+========================================== */
+
+:root{
+
+    --primary:#0E8A4B;
+    --primary-dark:#0A6A39;
+    --background:#f4f6f9;
+    --white:#ffffff;
+    --text:#2d3436;
+    --subtitle:#6c757d;
+
+    --radius:22px;
+
+    --shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+    --transition:.35s;
+
+}
 
 *{
     margin:0;
@@ -9,20 +27,17 @@
     box-sizing:border-box;
 }
 
-:root{
+html{
 
-    --verde:#0E8A4B;
-    --verde2:#22B56A;
-    --blanco:#ffffff;
-    --gris:#f4f6f8;
-    --texto:#2d3436;
-    --sombra:0 15px 40px rgba(0,0,0,.12);
+    scroll-behavior:smooth;
 
 }
 
 body{
 
-    background:var(--gris);
+    background:var(--background);
+
+    color:var(--text);
 
     font-family:
     "Segoe UI",
@@ -30,57 +45,71 @@ body{
     Helvetica,
     sans-serif;
 
-    color:var(--texto);
-
 }
 
-/* ===========================
+/*=========================
       CABECERA
-=========================== */
+==========================*/
 
 .hero{
 
     position:relative;
 
-    height:330px;
+    height:360px;
 
     background:
+
     linear-gradient(
+
     135deg,
-    var(--verde),
-    var(--verde2));
+
+    #0E8A4B,
+
+    #22B56A
+
+    );
 
     overflow:hidden;
 
 }
 
-.hero-wave{
+.hero-bg{
 
     position:absolute;
 
-    bottom:-90px;
+    inset:0;
 
-    left:-5%;
+    background:
 
-    width:110%;
+    radial-gradient(
 
-    height:180px;
+    circle at top right,
 
-    background:white;
+    rgba(255,255,255,.18),
 
-    border-radius:50%;
+    transparent 60%
+
+    );
 
 }
 
-/* ===========================
-      LOGO
-=========================== */
+.wave{
+
+    position:absolute;
+
+    bottom:-2px;
+
+    width:100%;
+
+    height:140px;
+
+}
 
 .profile{
 
     position:relative;
 
-    z-index:5;
+    z-index:2;
 
     text-align:center;
 
@@ -88,17 +117,17 @@ body{
 
 }
 
-.logo{
+.logo-card{
 
-    width:140px;
+    width:150px;
 
-    height:140px;
+    height:150px;
+
+    margin:auto;
 
     background:white;
 
     border-radius:50%;
-
-    margin:auto;
 
     display:flex;
 
@@ -106,25 +135,21 @@ body{
 
     justify-content:center;
 
-    box-shadow:var(--sombra);
+    box-shadow:var(--shadow);
 
 }
 
-.logo img{
+.logo-card img{
 
-    width:95px;
+    width:105px;
 
 }
 
-/* ===========================
-      TITULOS
-=========================== */
-
-h1{
+.profile h1{
 
     color:white;
 
-    margin-top:20px;
+    margin-top:22px;
 
     font-size:34px;
 
@@ -132,75 +157,151 @@ h1{
 
 }
 
-.empresa{
+.profile p{
 
     color:white;
-
-    opacity:.95;
 
     margin-top:8px;
 
     font-size:18px;
 
-}
-
-.divider{
-
-    width:70px;
-
-    height:4px;
-
-    background:white;
-
-    margin:18px auto;
-
-    border-radius:50px;
+    opacity:.95;
 
 }
 
-/* ===========================
+/*=========================
       CONTENIDO
-=========================== */
+==========================*/
 
 main{
 
     width:92%;
 
-    max-width:600px;
+    max-width:650px;
 
     margin:auto;
 
-    margin-top:-45px;
+    margin-top:-70px;
 
     position:relative;
 
-    z-index:10;
+    z-index:5;
 
 }
 
-/* ===========================
-      TARJETAS
-=========================== */
+/*=========================
+      ACCIONES
+==========================*/
 
-.card{
+.actions{
 
     background:white;
 
-    border-radius:22px;
+    border-radius:var(--radius);
 
-    padding:28px;
+    box-shadow:var(--shadow);
 
-    margin-bottom:25px;
-
-    box-shadow:var(--sombra);
-
-    animation:fadeUp .7s;
+    overflow:hidden;
 
 }
 
-.card h2{
+.action{
 
-    color:var(--verde);
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.action:last-child{
+
+    border:none;
+
+}
+
+.action:hover{
+
+    background:#f8f8f8;
+
+    transform:translateX(4px);
+
+}
+
+.icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    flex-shrink:0;
+
+}
+
+.action h3{
+
+    font-size:19px;
+
+    margin-bottom:4px;
+
+}
+
+.action p{
+
+    color:var(--subtitle);
+
+    font-size:15px;
+
+}
+
+/*=========================
+      TARJETAS
+==========================*/
+
+.about,
+.address{
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.about h2,
+.address h2{
+
+    color:var(--primary);
 
     margin-bottom:18px;
 
@@ -208,61 +309,8 @@ main{
 
 }
 
-/* ===========================
-      BOTONES
-=========================== */
-
-.button{
-
-    display:block;
-
-    text-decoration:none;
-
-    text-align:center;
-
-    padding:16px;
-
-    margin-top:15px;
-
-    border-radius:14px;
-
-    background:#ECEFF1;
-
-    color:#222;
-
-    font-weight:600;
-
-    transition:.30s;
-
-}
-
-.button:hover{
-
-    transform:translateY(-3px);
-
-    background:#dfe6e9;
-
-}
-
-.primary{
-
-    background:var(--verde);
-
-    color:white;
-
-}
-
-.primary:hover{
-
-    background:#08753d;
-
-}
-
-/* ===========================
-      TEXTO
-=========================== */
-
-.card p{
+.about p,
+.address p{
 
     line-height:1.8;
 
@@ -270,44 +318,76 @@ main{
 
 }
 
-/* ===========================
+/*=========================
       FOOTER
-=========================== */
+==========================*/
 
 footer{
 
-    margin-top:35px;
-
-    padding:30px;
-
     text-align:center;
+
+    padding:35px;
 
     color:#777;
 
-    font-size:15px;
+    font-size:14px;
 
 }
 
-/* ===========================
-      ANIMACION
-=========================== */
+/*=========================
+      ANIMACIONES
+==========================*/
+
+.logo-card{
+
+    animation:zoom .8s ease;
+
+}
+
+.actions,
+.about,
+.address{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(.75);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
 
 @keyframes fadeUp{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:translateY(30px);
+        transform:translateY(35px);
 
-}
+    }
 
-to{
+    to{
 
-opacity:1;
+        opacity:1;
 
-transform:translateY(0px);
+        transform:translateY(0);
 
-}
+    }
 
 }
