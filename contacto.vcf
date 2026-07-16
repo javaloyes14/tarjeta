@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Javaloyes;Jerónimo;;;
+FN:Jerónimo Javaloyes
+ORG:JERÓNIMO JAVALOYES S.L.
+TEL;TYPE=WORK,VOICE:965444570
+EMAIL;TYPE=WORK:info@javaloyes.es
+ADR;TYPE=WORK:;;C/ Paseo Germanías, 15;Elche;;03204;España
+END:VCARD
