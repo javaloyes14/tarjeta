@@ -1,55 +1,80 @@
-/* ===================================
+/* ==========================================
    RESPONSIVE
-   JERÓNIMO JAVALOYES S.L.
-=================================== */
+========================================== */
+
+/* Portátiles */
+
+@media (max-width:1200px){
+
+    main{
+
+        width:94%;
+
+    }
+
+}
 
 /* Tablets */
 
-@media screen and (max-width:900px){
+@media (max-width:900px){
 
-main{
+.hero{
 
-    width:94%;
-
-}
-
-.logo{
-
-    width:130px;
-    height:130px;
+    height:330px;
 
 }
 
-.logo img{
+.logo-card{
 
-    width:90px;
+    width:135px;
+    height:135px;
 
 }
 
-h1{
+.logo-card img{
+
+    width:95px;
+
+}
+
+.profile h1{
 
     font-size:30px;
 
 }
 
-.empresa{
+.profile p{
 
     font-size:17px;
 
 }
 
-.card{
+.action{
 
-    padding:24px;
+    padding:20px;
+
+}
+
+.icon{
+
+    width:50px;
+    height:50px;
+    font-size:22px;
+
+}
+
+.about,
+.address{
+
+    padding:25px;
 
 }
 
 }
-
 
 /* Móviles */
 
-@media screen and (max-width:600px){
+@media (max-width:600px){
 
 .hero{
 
@@ -57,79 +82,112 @@ h1{
 
 }
 
-.hero-wave{
+.wave{
 
-    bottom:-75px;
-    height:150px;
+    height:100px;
 
 }
 
-.logo{
+.logo-card{
 
     width:115px;
     height:115px;
 
 }
 
-.logo img{
+.logo-card img{
 
     width:80px;
 
 }
 
-h1{
+.profile{
 
-    font-size:27px;
+    padding-top:35px;
+
+}
+
+.profile h1{
+
+    font-size:25px;
     padding:0 20px;
 
 }
 
-.empresa{
+.profile p{
 
     font-size:15px;
-    padding:0 20px;
 
 }
 
-.card{
+main{
 
-    border-radius:18px;
+    width:94%;
+    margin-top:-55px;
+
+}
+
+.action{
+
+    padding:18px;
+    gap:15px;
+
+}
+
+.icon{
+
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    font-size:20px;
+
+}
+
+.action h3{
+
+    font-size:17px;
+
+}
+
+.action p{
+
+    font-size:14px;
+
+}
+
+.about,
+.address{
+
     padding:22px;
 
 }
 
-.card h2{
+.about h2,
+.address h2{
 
     font-size:22px;
 
 }
 
-.card p{
+.about p,
+.address p{
 
-    font-size:16px;
-
-}
-
-.button{
-
-    padding:15px;
-    font-size:16px;
+    font-size:15px;
+    line-height:1.7;
 
 }
 
 footer{
 
-    font-size:14px;
-    padding-bottom:40px;
+    padding:30px 20px;
 
 }
 
 }
-
 
 /* Móviles pequeños */
 
-@media screen and (max-width:380px){
+@media (max-width:380px){
 
 .hero{
 
@@ -137,41 +195,61 @@ footer{
 
 }
 
-.logo{
+.logo-card{
 
-    width:100px;
-    height:100px;
-
-}
-
-.logo img{
-
-    width:70px;
+    width:95px;
+    height:95px;
 
 }
 
-h1{
+.logo-card img{
 
-    font-size:23px;
-
-}
-
-.empresa{
-
-    font-size:14px;
+    width:65px;
 
 }
 
-.card{
+.profile h1{
+
+    font-size:21px;
+
+}
+
+.profile p{
+
+    font-size:13px;
+
+}
+
+.action{
+
+    padding:15px;
+
+}
+
+.icon{
+
+    width:40px;
+    height:40px;
+    font-size:18px;
+
+}
+
+.action h3{
+
+    font-size:15px;
+
+}
+
+.action p{
+
+    font-size:13px;
+
+}
+
+.about,
+.address{
 
     padding:18px;
-
-}
-
-.button{
-
-    padding:14px;
-    font-size:15px;
 
 }
 
