@@ -1,115 +1,76 @@
-/* ===========================================
+/* ==========================================
    JERÓNIMO JAVALOYES S.L.
-   app.js
-=========================================== */
+   APP.JS
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    iniciarAnimaciones();
-    efectoBotones();
-    mostrarTarjetas();
+    iniciarAnimacion();
+
+    activarRipple();
+
+    observarTarjetas();
+
+    efectoScroll();
 
 });
 
-/* ===========================================
-      Animación inicial
-=========================================== */
 
-function iniciarAnimaciones(){
+/* ==========================================
+   ANIMACIÓN INICIAL
+========================================== */
 
-    const logo = document.querySelector(".logo");
-    const titulo = document.querySelector("h1");
-    const empresa = document.querySelector(".empresa");
-    const linea = document.querySelector(".divider");
+function iniciarAnimacion(){
 
-    if(logo){
-        logo.animate([
-            {
-                transform:"scale(.6)",
-                opacity:0
-            },
-            {
-                transform:"scale(1)",
-                opacity:1
-            }
-        ],{
-            duration:700,
-            easing:"ease-out",
-            fill:"forwards"
-        });
-    }
-
-    if(titulo){
-
-        titulo.animate([
-            {
-                opacity:0,
-                transform:"translateY(20px)"
-            },
-            {
-                opacity:1,
-                transform:"translateY(0)"
-            }
-
-        ],{
-
-            duration:700,
-            delay:250,
-            fill:"forwards"
-
-        });
-
-    }
-
-    if(empresa){
-
-        empresa.animate([
-            {
-                opacity:0
-            },
-            {
-                opacity:1
-            }
-
-        ],{
-
-            duration:700,
-            delay:450,
-            fill:"forwards"
-
-        });
-
-    }
-
-    if(linea){
-
-        linea.animate([
-            {
-                width:"0px"
-            },
-            {
-                width:"70px"
-            }
-
-        ],{
-
-            duration:600,
-            delay:700,
-            fill:"forwards"
-
-        });
-
-    }
+    document.body.classList.add("loaded");
 
 }
 
-/* ===========================================
-      Tarjetas
-=========================================== */
 
-function mostrarTarjetas(){
+/* ==========================================
+   EFECTO RIPPLE EN BOTONES
+========================================== */
 
-    const cards=document.querySelectorAll(".card");
+function activarRipple(){
+
+    const botones=document.querySelectorAll(".action");
+
+    botones.forEach((boton)=>{
+
+        boton.addEventListener("click",(e)=>{
+
+            const ripple=document.createElement("span");
+
+            ripple.className="ripple";
+
+            const rect=boton.getBoundingClientRect();
+
+            ripple.style.left=(e.clientX-rect.left)+"px";
+
+            ripple.style.top=(e.clientY-rect.top)+"px";
+
+            boton.appendChild(ripple);
+
+            setTimeout(()=>{
+
+                ripple.remove();
+
+            },600);
+
+        });
+
+    });
+
+}
+
+
+/* ==========================================
+   APARICIÓN AL HACER SCROLL
+========================================== */
+
+function observarTarjetas(){
+
+    const elementos=document.querySelectorAll(".about,.address,.actions");
 
     const observer=new IntersectionObserver((entries)=>{
 
@@ -117,7 +78,7 @@ function mostrarTarjetas(){
 
             if(entry.isIntersecting){
 
-                entry.target.classList.add("visible");
+                entry.target.classList.add("show");
 
             }
 
@@ -125,72 +86,33 @@ function mostrarTarjetas(){
 
     },{
 
-        threshold:.2
+        threshold:.15
 
     });
 
-    cards.forEach(card=>{
+    elementos.forEach((elemento)=>{
 
-        observer.observe(card);
-
-    });
-
-}
-
-/* ===========================================
-      Botones
-=========================================== */
-
-function efectoBotones(){
-
-    const botones=document.querySelectorAll(".button");
-
-    botones.forEach((boton)=>{
-
-        boton.addEventListener("mousedown",()=>{
-
-            boton.style.transform="scale(.97)";
-
-        });
-
-        boton.addEventListener("mouseup",()=>{
-
-            boton.style.transform="scale(1)";
-
-        });
-
-        boton.addEventListener("mouseleave",()=>{
-
-            boton.style.transform="scale(1)";
-
-        });
+        observer.observe(elemento);
 
     });
 
 }
 
-/* ===========================================
-      Scroll suave
-=========================================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+/* ==========================================
+   EFECTO PARALLAX CABECERA
+========================================== */
 
-    anchor.addEventListener("click",function(e){
+function efectoScroll(){
 
-        e.preventDefault();
+    const hero=document.querySelector(".hero");
 
-        const destino=document.querySelector(this.getAttribute("href"));
+    window.addEventListener("scroll",()=>{
 
-        if(destino){
+        const y=window.scrollY;
 
-            destino.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
+        hero.style.backgroundPositionY=(y*0.3)+"px";
 
     });
 
-});
+}
