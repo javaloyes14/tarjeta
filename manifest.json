@@ -1,0 +1,17 @@
+{
+    "name": "Jerónimo Javaloyes",
+    "short_name": "Javaloyes",
+    "description": "Tarjeta digital de JERÓNIMO JAVALOYES S.L.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#0b8f48",
+    "theme_color": "#0b8f48",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "img/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
