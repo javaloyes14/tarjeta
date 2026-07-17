@@ -3,8 +3,8 @@ VERSION:3.0
 N:Javaloyes;Jerónimo;;;
 FN:Jerónimo Javaloyes
 ORG:JERÓNIMO JAVALOYES S.L.
-TITLE:Instalaciones Eléctricas
-TEL;TYPE=WORK,VOICE:965444570
-EMAIL;TYPE=WORK:info@javaloyes.es
-ADR;TYPE=WORK:;;Paseo Germanías, 15;Elche;Alicante;03204;España
+TITLE:
+TEL;TYPE=WORK,VOICE:+34965444570
+EMAIL;TYPE=INTERNET:info@javaloyes.es
+ADR;TYPE=WORK:;;Paseo Germanías\, 15;Elche;Alicante;03204;España
 END:VCARD
